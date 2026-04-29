@@ -832,16 +832,16 @@ body.theme-dark .ptr-circle{stroke:#5eead4}
    ═══════════════════════════════════════════════════════════════ */
 @media(max-width:640px){
   .page-slide-in-right{
-    animation:pageSlideInRight .35s cubic-bezier(.2,.8,.2,1) both;
+    animation:pageSlideInRight .22s cubic-bezier(.2,.8,.2,1) both;
   }
   .page-slide-in-left{
-    animation:pageSlideInLeft .35s cubic-bezier(.2,.8,.2,1) both;
+    animation:pageSlideInLeft .22s cubic-bezier(.2,.8,.2,1) both;
   }
 }
 @keyframes pageSlideInRight{
   from{
     opacity:0;
-    transform:translateX(24px);
+    transform:translateX(16px);
   }
   to{
     opacity:1;
@@ -851,7 +851,7 @@ body.theme-dark .ptr-circle{stroke:#5eead4}
 @keyframes pageSlideInLeft{
   from{
     opacity:0;
-    transform:translateX(-24px);
+    transform:translateX(-16px);
   }
   to{
     opacity:1;
@@ -1075,43 +1075,44 @@ body.theme-dark .about-build-info{color:#64748b;border-top-color:rgba(255,255,25
 
 /* ═══════════════════════════════════════════════════════════════
    STAGGER FADE-IN — Cards apparaissent en cascade au chargement page
-   Apple-style premium feel
+   Apple-style premium feel — UNIQUEMENT au premier chargement,
+   pas à chaque navigation d'onglet (sinon ça donne un sentiment de rame).
    ═══════════════════════════════════════════════════════════════ */
-.page.on .mh-hero,
-.page.on .page-hero,
-.page.on .mh-kpis,
-.page.on .mh-chart-card,
-.page.on .mh-tip-card,
-.page.on .hist-tabs,
-.page.on .hist-seg-control,
-.page.on .hist-section,
-.page.on .hist-filters,
-.page.on .an-kpi-grid,
-.page.on .an-card,
-.page.on .me-types,
-.page.on .me-form,
-.page.on .me-section,
-.page.on .set-grid > .set-tile,
-.page.on .two,
-.page.on .card{
+body.first-load .page.on .mh-hero,
+body.first-load .page.on .page-hero,
+body.first-load .page.on .mh-kpis,
+body.first-load .page.on .mh-chart-card,
+body.first-load .page.on .mh-tip-card,
+body.first-load .page.on .hist-tabs,
+body.first-load .page.on .hist-seg-control,
+body.first-load .page.on .hist-section,
+body.first-load .page.on .hist-filters,
+body.first-load .page.on .an-kpi-grid,
+body.first-load .page.on .an-card,
+body.first-load .page.on .me-types,
+body.first-load .page.on .me-form,
+body.first-load .page.on .me-section,
+body.first-load .page.on .set-grid > .set-tile,
+body.first-load .page.on .two,
+body.first-load .page.on .card{
   animation:staggerIn .5s var(--ease-out) both;
 }
 
 /* Stagger delays: each subsequent direct child gets +50ms */
-.page.on > *:nth-child(1),
-.page.on > div > *:nth-child(1){animation-delay:0ms}
-.page.on > *:nth-child(2),
-.page.on > div > *:nth-child(2){animation-delay:50ms}
-.page.on > *:nth-child(3),
-.page.on > div > *:nth-child(3){animation-delay:100ms}
-.page.on > *:nth-child(4),
-.page.on > div > *:nth-child(4){animation-delay:150ms}
-.page.on > *:nth-child(5),
-.page.on > div > *:nth-child(5){animation-delay:200ms}
-.page.on > *:nth-child(6),
-.page.on > div > *:nth-child(6){animation-delay:240ms}
-.page.on > *:nth-child(7),
-.page.on > div > *:nth-child(7){animation-delay:280ms}
+body.first-load .page.on > *:nth-child(1),
+body.first-load .page.on > div > *:nth-child(1){animation-delay:0ms}
+body.first-load .page.on > *:nth-child(2),
+body.first-load .page.on > div > *:nth-child(2){animation-delay:50ms}
+body.first-load .page.on > *:nth-child(3),
+body.first-load .page.on > div > *:nth-child(3){animation-delay:100ms}
+body.first-load .page.on > *:nth-child(4),
+body.first-load .page.on > div > *:nth-child(4){animation-delay:150ms}
+body.first-load .page.on > *:nth-child(5),
+body.first-load .page.on > div > *:nth-child(5){animation-delay:200ms}
+body.first-load .page.on > *:nth-child(6),
+body.first-load .page.on > div > *:nth-child(6){animation-delay:240ms}
+body.first-load .page.on > *:nth-child(7),
+body.first-load .page.on > div > *:nth-child(7){animation-delay:280ms}
 
 @keyframes staggerIn{
   from{
@@ -1124,23 +1125,23 @@ body.theme-dark .about-build-info{color:#64748b;border-top-color:rgba(255,255,25
   }
 }
 @media (prefers-reduced-motion:reduce){
-  .page.on .mh-hero,
-  .page.on .page-hero,
-  .page.on .mh-kpis,
-  .page.on .mh-chart-card,
-  .page.on .mh-tip-card,
-  .page.on .hist-tabs,
-  .page.on .hist-seg-control,
-  .page.on .hist-section,
-  .page.on .hist-filters,
-  .page.on .an-kpi-grid,
-  .page.on .an-card,
-  .page.on .me-types,
-  .page.on .me-form,
-  .page.on .me-section,
-  .page.on .set-grid > .set-tile,
-  .page.on .two,
-  .page.on .card{
+  body.first-load .page.on .mh-hero,
+  body.first-load .page.on .page-hero,
+  body.first-load .page.on .mh-kpis,
+  body.first-load .page.on .mh-chart-card,
+  body.first-load .page.on .mh-tip-card,
+  body.first-load .page.on .hist-tabs,
+  body.first-load .page.on .hist-seg-control,
+  body.first-load .page.on .hist-section,
+  body.first-load .page.on .hist-filters,
+  body.first-load .page.on .an-kpi-grid,
+  body.first-load .page.on .an-card,
+  body.first-load .page.on .me-types,
+  body.first-load .page.on .me-form,
+  body.first-load .page.on .me-section,
+  body.first-load .page.on .set-grid > .set-tile,
+  body.first-load .page.on .two,
+  body.first-load .page.on .card{
     animation:none;
   }
 }
@@ -3496,12 +3497,22 @@ body.theme-teal .help-contact-link{background:linear-gradient(135deg,#10b981,#04
   border-radius:24px 24px 0 0;
   box-shadow:0 -10px 40px rgba(0,0,0,.18);
   max-height:82vh;display:flex;flex-direction:column;
-  transform:translateY(100%);transition:transform .32s cubic-bezier(.32,.72,0,1);
+  transform:translateY(100%);transition:transform .32s cubic-bezier(.32,.72,0,1), opacity .25s ease, visibility 0s linear .32s;
   overflow:hidden;
   font-family:var(--f);
   padding-bottom:env(safe-area-inset-bottom,0);
+  /* HIDDEN BY DEFAULT — prevents stuck modal & accidental click capture */
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
 }
-.pm-sheet.show{transform:translateY(0)}
+.pm-sheet.show{
+  transform:translateY(0);
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transition:transform .32s cubic-bezier(.32,.72,0,1), opacity .25s ease, visibility 0s linear 0s;
+}
 @media(min-width:641px){
   .pm-sheet{
     left:50%;right:auto;bottom:50%;
@@ -16411,7 +16422,7 @@ function nav(id, fromRefresh){
       // Cleanup the class after animation
       setTimeout(() => {
         pg.classList.remove('page-slide-in-right','page-slide-in-left');
-      }, 380);
+      }, 240);
     }
   }
   document.getElementById('ttl').textContent=getPageName(id);
@@ -16901,6 +16912,22 @@ async function finishInit(){
 }
 async function init(){
   await load(); // remplit S OU positionne PENDING_ENCRYPTED_LOAD
+
+  // ── DEFENSIVE: ensure no modal is stuck in a half-open state from a
+  //    previous session, an interrupted animation, or a hot reload.
+  try{
+    document.querySelectorAll('.pm-sheet, .pm-sheet-overlay, .mb, .success-modal, .ob-overlay').forEach(function(el){
+      el.classList.remove('show', 'op');
+    });
+    document.body.classList.remove('pm-sheet-open');
+  }catch(_){}
+
+  // ── First-load class: enables stagger animation only on initial boot,
+  //    not on every tab navigation (otherwise everything feels laggy).
+  document.body.classList.add('first-load');
+  setTimeout(function(){
+    try{ document.body.classList.remove('first-load'); }catch(_){}
+  }, 1400);
 
   // ── Phase 1 : setup UI indépendant des données ───────────────────
   const d=new Date();
